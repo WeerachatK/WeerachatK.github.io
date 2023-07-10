@@ -21,11 +21,12 @@ body {
   }
   h1 {
     color: brown;
+    font-size: 50px;
     text-shadow: 0.1em 0.07em 0.04em bisque;
-    font-size: 50PX;
     text-align: center;
     margin: auto;
   }
+ 
   li {
     margin: 5px;
   }
@@ -39,4 +40,26 @@ body {
     height: auto;    
     padding: 30px;
     border: 3px solid brown;
+}
+@media (max-width: 495px) {
+  h1 {
+    font-size: 40px;
+  }
+  p, ul, li, a{
+    font-size: 13px;
+  }
+  .popular{
+    border: 3px dotted red;
+  }
+}
+@media (max-width: 395px) {
+  h1 {
+    font-size: 30px;
+  }
+  p, ul, li, a{
+    font-size: 10px;
+  }
+  .popular{
+    border: 2px dotted red;
+  }
 }
