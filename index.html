@@ -1,37 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./styles/weerachat-styles.css">
-    <title>Weerachat's example page</title>
-</head>
-<body>
-    <div class="div1">
-        <h1>Khon Kaen</h1>
-        <h1>University</h1>
-<figure>
-    <img src="https://digital.kku.ac.th/wp-content/uploads/2020/05/LOGOKKU-1024x576.jpg">
-    <img src="images/kku.jpg">
-    <figcaption>Khon Kaen University </figcaption>
-</figure>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problem1</title>
+    <style>
+      h2 {
+          font-size: 40px;
+        }
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      h2 {
+        text-align: center;
+      }
+      p{
+        margin-left: 10px;
+        margin-right: 5px;
+      }
+      li {
+        text-align: left;
+        font-size: large;
+        margin-right: 10px;
+      }
+      .header {
+        font-size: xx-large;
+      }
 
-<p id="heading">
-    Khon Kaen University has many outstanding places
-</p>
-<ul>
-    <li class="popular">ศาลเจ้าพ่อมอ</li>
-    <li>พิพิธภัณฑ์ธรรมชาติวิทยา มข</li>
-    <li class="popular">อุโมงค์ต้นไม้</li>
-</ul>
-<p>
-    Visit website
-    <a href="https://www.kku.ac.th/" 
-        target="_blank" >
-        Khon Kaen University.
-    </a>
-</p> 
-    </div>
-</body>
+      @media (max-width: 620px) {
+        h2 {
+          font-size: 25px;
+        }
+        .header {
+        font-size: x-large;
+      }
+      li {
+        font-size: small;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function isPositiveInteger(num) {
+        const parsedNum1 = parseFloat(num);
+        const parsedNum2 = parseInt(num);
+
+        return (
+          Number.isInteger(parsedNum2) &&
+          parsedNum2 > 0 &&
+          parsedNum1 - parsedNum2 == 0
+        );
+      }
+
+      function isPrime(num) {
+        if (num <= 1) {
+          return false;
+        }
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function findPrimes(number) {
+        const primes = [];
+        for (let i = 2; i <= number; i++) {
+          if (isPrime(i)) {
+            primes.push(i);
+          }
+        }
+        if (number == 1) {
+          alert("There is no prime number that does not exceed 1.");
+        } else {
+          alert("Prime numbers up to " + number + " is " + primes.join(", "));
+        }
+      }
+
+      function promptPositiveInteger() {
+        let number = prompt("Enter a positive integer:");
+
+        while (number !== null && !isPositiveInteger(number)) {
+          number = prompt("Invalid input. Please enter a positive integer:");
+        }
+
+        if (number !== null) {
+          findPrimes(number);
+        }
+      }
+
+      promptPositiveInteger();
+    </script>
+
+    <h2>Prime Number finder!</h2>
+    <p class="header">
+      Write the web app to prompt accepting for a positive integer number
+    </p>
+    <ul>
+      <li>
+        If the entered text is not a positive integer number, then the web app
+        will keep asking for a number until the valid positive integer is
+        entered
+      </li>
+      <li>
+        If the entered text is a positive integer, then the app will add into a
+        list of prime numbers
+      </li>
+    </ul>
+    <p class="header">Hint:</p>
+    <ol>
+      <li>you may want to use loop with label</li>
+      <li>you may want to use array with push function</li>
+    </ol>
+  </body>
 </html>
-
