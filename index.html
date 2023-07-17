@@ -48,9 +48,8 @@
         const parsedNum2 = parseInt(num);
 
         return (
-          Number.isInteger(parsedNum2) &&
-          parsedNum2 > 0 &&
-          parsedNum1 - parsedNum2 == 0
+          Number.isInteger(num) &&
+          parsedNum2 > 0 
         );
       }
 
@@ -76,7 +75,7 @@
         if (number == 1) {
           alert("There is no prime number that does not exceed 1.");
         } else {
-          alert("Prime numbers up to " + number + " is " + primes.join(", "));
+ 
         }
       }
 
